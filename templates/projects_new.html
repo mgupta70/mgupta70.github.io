@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .project-item {
+      margin-bottom: 20px;
+    }
+    .project-heading {
+      font-size: 1.25rem;
+    }
+    .project-description {
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h2 class="text-center">Projects</h2>
+
+    <!-- Project 1 -->
+    <div class="row project-item">
+      <div class="col-md-4">
+        <h3 class="project-heading">Graph-P&IDs <em style="font-size: 50%;">[Ongoing]</em></h3>
+        <p class="project-description">Converting P&IDs into a graph data structure to support NLP queries, information retrieval, safety compliance, and drawing editing.</p>
+		<div class="badges">
+          <img src="https://img.shields.io/badge/Graph-orange" alt="Graph Badge">
+          <img src="https://img.shields.io/badge/NLP-blue" alt="NLP Badge">
+		  </div>
+      </div>
+      <div class="col-md-4">
+        <h3 class="project-heading">3D reconstruction by NeRF and SfM from 360° camera images <a target="_blank" href="https://drive.google.com/file/d/1Mc4nvLkxQQfcEw4aE41MP5FPK6P2ftfT/view?usp=drive_link"><em style="font-size: 50%;">[Paper]</em></a></h3>
+        <p class="project-description">Capturing a scene with Lidar inherently needs a large amount of data storage. This study investigates alternative approaches to capture 3D information via 360 videos using Structure-from-Motion (SfM) and Neural Radiance Fields (NeRF).</p>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-sm-12">
+            <figure>
+              <img src="static/img/small_scan.gif" class="img-fluid" alt="Laser scan">
+              <figcaption>Laser scan</figcaption>
+            </figure>
+          </div>
+          <div class="col-sm-12">
+            <figure>
+              <img src="static/img/small_nerf.gif" class="img-fluid" alt="NeRF">
+              <figcaption>NeRF</figcaption>
+            </figure>
+          </div>
+          <div class="col-sm-12">
+            <figure>
+              <img src="static/img/small_colmap.gif" class="img-fluid" alt="SfM">
+              <figcaption>SfM</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="row project-item">
+      <div class="col-md-12">
+        <h3 class="project-heading">Semi-supervised symbols detection in Piping and Instrumentation Drawings (P&IDs) <em style="font-size: 50%;">[Paper under review]</em></h3>
+        <p class="project-description">Typically, P&IDs have many symbols depicting various equipment. Labeling symbols is challenging. A semi-supervised pipeline was built for symbol detection achieving a Top-1 accuracy of 85.49% over 102 test classes.</p>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="row project-item">
+      <div class="col-md-12">
+        <h3 class="project-heading">Automated 2D building plans to 3D digital model <em style="font-size: 50%;"><a target="_blank" href="https://www.researchgate.net/publication/373921858_Interoperability_between_Deep_Neural_Networks_and_3D_Architectural_Modeling_Software_Affordances_of_Detection_and_Segmentation">Journal paper</a>; <a target="_blank" href="https://doi.org/10.22260/ISARC2022/0023">Conf paper</a></em></h3>
+        <p class="project-description">This project aims to speed up the conversion of 2D CAD into 3D BIM models. A semantic segmentation-based approach was found to be more performant than bounding-based methods, with linkage to 3D drafting software via Dynamo API.</p>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="row project-item">
+      <div class="col-md-12">
+        <h3 class="project-heading">Valve detection in P&IDs without human annotations: A synthetic data approach <em style="font-size: 50%;"><a target="_blank" href="https://doi.org/10.22260/ISARC2022/0088">[Conf paper]</a></em></h3>
+        <p class="project-description">A synthetic data generation pipeline was devised to create a labeled dataset without human annotations. The presence of look-alike symbols (hard negatives) helped reduce false positives and increased performance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
