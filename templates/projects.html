@@ -25,6 +25,15 @@
       <div class="col-sm-12">
         <h3 class="content_heading">Semi-supervised symbols detection in Piping and Instrumentation Drawings (P&IDs)<a target="_blank" href="https://www.sciencedirect.com/science/article/abs/pii/S0926580523005204"><em style="font-size: 50%;">[Paper]</a></em></h3>
         <br>
+      </p>
+      <a class="github-button btn" href="https://github.com/mgupta70/PID_Symbol_Detection" data-size="large" data-show-count="false"
+        aria-label="mgupta70/PID_Symbol_Detection on GitHub">Code</a>
+      <a class="github-button" href="https://github.com/mgupta70/PID_Symbol_Detection" data-icon="octicon-star" data-size="large"
+        data-show-count="true" aria-label="Star mgupta70/PID_Symbol_Detection on GitHub">Star</a>
+        <figure>
+          <img src="https://github.com/mgupta70/PID_Symbol_Detection/blob/main/media/workflow.svg" width="300px">
+          <figcaption>P&ID overview</figcaption>
+        </figure>
         <p>Typically, P&IDs would have 100's of symbols depicting equipments like valves, compressors, piping components, etc. Manually labelling the dataset is a challenging task due to (i) large number of classesm (ii) many symbols resemble a lot with one another causing confusion while annotating and (iii) non-standardized drawing layouts. Hence, a symbol detection pipleline with class agnostic detection & self-supervised symbol classification is proposed that achieved a Top-5 accuracy of 95.49% over 102 test classes.</p>
       </div>
     </div>
@@ -35,7 +44,9 @@
       <div class="col-sm-12">
         <h3 class="content_heading">3D scene reconstruction with NeRF and SfM from 360°camera images<a target="_blank" href="https://drive.google.com/file/d/1Mc4nvLkxQQfcEw4aE41MP5FPK6P2ftfT/view?usp=drive_link"><em style="font-size: 50%;">[Paper]</a></em></h3>
         <br>
-        <p> Capturing a scene with Lidar inherently needs a large amount of data storage. So, in this study, I investigated an alternative approach to capture the 3D information via 360 videos. I particularly used Structure-from-Motion (SfM) and Neural Radiance Fields (NeRF) for the task of 3D reconstruction. These techniques provide significant savings in terms of data storage requirements but there is a trade-off with dimensional accuracy. In my view, the selection of appropriate technology would be driven by its use case. For ex: for a simple task of visualization, SfM method could be preferred but if one needs precise measurement (of tiny or thin objects) then Lidar would be the choice.</p>
+        <p> Capturing a scene with Lidar inherently needs a large amount of data storage. So, in this study, I investigated an alternative approach to capture the 3D information via 360 videos. I particularly used Structure-from-Motion (SfM) and Neural Radiance Fields (NeRF) for the task of 3D reconstruction. These techniques provide significant savings in terms of data storage requirements but there is a trade-off with dimensional accuracy. Please refer the Results section in the attached paper for quantitative results. 
+          Since construction sites are not always well-lit, NeRF didn't perform quite well for the objects that were far and poorly lit. However, areas which are well-lit, 3D reconstruction by NeRF and SfM were almost same.
+          In my view, the selection of appropriate technology would be driven by its use case. For ex: for a simple task of visualization, SfM method could be preferred but if one needs precise measurement (of tiny or thin objects) then Lidar would be the choice.</p>
       </div>
     </div>
     <div class="row" align="center">
@@ -58,10 +69,6 @@
     </figure>
   </div>
 </div>
-
-
-   
-
 
     
     <hr>
