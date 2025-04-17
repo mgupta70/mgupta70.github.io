@@ -8,9 +8,11 @@
         <h3 class="content_heading">Visual document parsing for engineering blueprints</em></h3>
         <br>
         <p><b>Context/Challenge:</b> Information from Engineering Drawings (like P&IDs) is challenging to extract because: <br>
-          (1) They are often shared in image-based formats (e.g., PDF, PNG, JPEG) rendering CAD software tools unable to index the information.<br> 
-          (2) A lot of information in Engineering Drawings is 'visual' in nature which requires domain expertise and topological understanding to understand how different objects are functionally connected to one another.<br>
-        <b>Solution:</b> Made the <b>'visual' information within P&IDs searchable</b> using LLMs and computer vision. <br>
+          <ul>
+            <li>(1) They are often shared in image-based formats (e.g., PDF, PNG, JPEG) rendering CAD software tools unable to index the information.</li> 
+            <li>(2) A lot of information in Engineering Drawings is 'visual' in nature which requires domain expertise and topological understanding to understand how different objects are functionally connected to one another.</li>
+          </ul>
+          <b>Solution:</b> Made the <b>'visual' information within P&IDs searchable</b> using LLMs and computer vision. <br>
         <!-- Consequently, P&IDs are first digitized by identifying entities such as symbols, lines, and text (Step-<b>I</b>). The detected entities are then linked to create a base entity graph (Step-<b>II</b>). Here, symbols = nodes, lines = edges, texts = property. The base entity graph is then augmented with semantic attributes for nodes and edges forming knowledge graph (Step-<b>III</b>). The knowledge graph is then used to answer queries such as "find all the valves in the drawing" or perform design checks like "are pumps provided with strainers to prevent dirt getting in? (Step-<b>IV</b>)".<br> -->
         <br>
         <figure>
@@ -22,7 +24,7 @@
         <a target="_blank" href="https://www.sciencedirect.com/science/article/abs/pii/S0926580523005204">[Autom. Constr. 2024]</a>,
         <a target="_blank" href="https://www.iaarc.org/publications/2022_proceedings_of_the_39th_isarc_bogota_colombia/automated_valve_detection_in_piping_and_instrumentation_pid_diagrams.html"> [Paper-2]</a> <br>
         (2) A custom line detection method <em>(Most tricky)</em> using Probabilistic Hough Transform with my own line-merging and programmatic hyperparameter selection modules. It finds all lines in a 7168x4561 image within 22 seconds with no manual intervention (compared to few minutes in common pixel-by-pixel traversal methods). [Paper] (Accepted) posting soon....<br>
-        (3) A thorough eveluation of LLMs in answering 4 types of questions - simple counting, spatial counting, connectivity-related and value-based. Methods to improve Text-to-Cypher accuracy such as graph schema reshaping, contextualization, few-shot prompting are quanitified. [Paper] (Accepted) posting soon....<br>
+        (3) A thorough eveluation of LLMs in answering four types of questions - simple counting, spatial counting, connectivity-related and value-based. Methods to improve Text-to-Cypher accuracy such as graph schema reshaping, contextualization, few-shot prompting are quanitified. [Paper] (Accepted) posting soon....<br>
         </p>
       </div>
     </div>
@@ -154,9 +156,23 @@
         </p>
         <br>
         <p>  Aim of this project is to speed up the conversion of a 2D CAD into a 3D BIM model. We found that the semantic segmentation-based approach is more performant than the typical bounding-based methods. In post-processing, we configured the linkage of neural network outputs to a 3D drafting software via Dynamo API.</p>
-        <figure>
+        <!-- <figure>
           <img src="static/img/cad_to_3d.png" alt="wall3d" width="800">
-        </figure>
+        </figure> -->
+        <div class="row" align="center">
+          <div class="col-sm-4">
+            <figure>
+              <img src="static/img/cad_overview.png" width="700px">
+              <figcaption>Laser scan</figcaption>
+            </figure>
+          </div>
+          <div class="col-sm-4">
+            <figure>
+              <img src="static/img/cad_to_3d.png" width="300px">
+              <figcaption>NeRF</figcaption>
+            </figure>
+          </div>
+        </div>
         
       </div>
     </div>
