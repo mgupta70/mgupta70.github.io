@@ -7,11 +7,11 @@
       <div class="col-sm-12">
         <h3 class="content_heading">Visual document parsing for engineering blueprints</em></h3>
         <br>
-        <p>Converting P&IDs into a graph data structure to support NLP queries, information retrieval, safety compliance, and drawing editing.
-          Will be updated soon ...
+        <p>Context: Engineering Drawings (EDs) contain a lot of 'visual' information which cannot be indexed by OCR-based methods. Therefore, this work attempts to make the visual information within EDs 'searchable'.<br>
+          Solution: Since EDs are often shared in image-based formats (e.g., PDF, PNG, JPEG), they are first digitized by identifying entities such as symbols, lines, and text. The detected entities are then linked to create a base entity graph (symbols = nodes, lines = edges, texts = property). The base entity graph is then augmented with semantic attributes for nodes and edges forming knowledge graph. The knowledge graph is then used to answer queries such as "find all the valves in the drawing" or perform design checks like "are pumps provided with strainers to prevent dirt getting in?".<br>
 		  <br>
         <figure>
-        <img src="static/img/pid_graph.png" width="750px">
+        <img src="static/img/pid_overview.png" width="750px">
       </figure>
         </p>
       </div>
