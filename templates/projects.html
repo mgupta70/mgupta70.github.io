@@ -7,17 +7,14 @@
       <div class="col-sm-12">
         <h3 class="content_heading">Visual document parsing for engineering blueprints</em></h3>
         <br>
-        <p><b>Context:</b> Engineering Drawings (EDs) contain a lot of 'visual' information which cannot be indexed by OCR-based methods. Therefore, this work attempts to make the visual information within EDs 'searchable'.<br>
-        <b>Solution:</b> Since EDs are often shared in image-based formats (e.g., PDF, PNG, JPEG), they are first digitized by identifying entities such as symbols, lines, and text (Step-I). The detected entities are then linked to create a base entity graph (Step-II). Here, symbols = nodes, lines = edges, texts = property. The base entity graph is then augmented with semantic attributes for nodes and edges forming knowledge graph (Step-III). The knowledge graph is then used to answer queries such as "find all the valves in the drawing" or perform design checks like "are pumps provided with strainers to prevent dirt getting in? (Step-IV)".<br>
+        <p><b>Context:</b> Information Extraction from Engineering Drawings (like P&IDs) is challenging because of 2 reasons. (1) They are often shared in image-based formats (e.g., PDF, PNG, JPEG) rendering CAD software tools unable to index the information. (2) A lot of information in Engineering Drawings is 'visual' in nature which requires domain expertise and topological understanding to understand how different objects are functionally connected to one another.<br>
+        <b>Solution:</b> To solve the challenge of information extraction, this work attempts to <b>make the 'visual' information searchable</b> within P&IDs using LLMs and Computer Vision. Consequently, P&IDs are first digitized by identifying entities such as symbols, lines, and text (Step-<b>I</b>). The detected entities are then linked to create a base entity graph (Step-<b>II</b>). Here, symbols = nodes, lines = edges, texts = property. The base entity graph is then augmented with semantic attributes for nodes and edges forming knowledge graph (Step-<b>III</b>). The knowledge graph is then used to answer queries such as "find all the valves in the drawing" or perform design checks like "are pumps provided with strainers to prevent dirt getting in? (Step-<b>IV</b>)".<br>
 		  <br>
         <figure>
-        <img src="static/img/pid_overview.png" width="1250px">
+        <img src="static/img/pid_overview.png" width="1150px">
       </figure>
         </p>
         <p><b>Symbol Detection:</b> Symbols are detected using Class-Agnostic Detection followed by one-shot classification. This is done because in P&IDs (a type of EDs), there can be more than 400 different types of symbols. Annotating all symbol categories will be time-consuming process. Training in class-agnostic manner will help building a more 'generalizable' symbol detector with capabilites of detecting unseen symbol classes with approx 65% savings in resources to annotate dataset. Refer [Paper] for more details and results<br>
-          <figure>
-            <img src="static/img/workflow.svg">
-          </figure>
         <b>Line Detection:</b> (Most tricky) Developed a custom method using Probabilistic Hough Transform with line-merging and programmatic hyperparameter selection modules. Our method could find all lines in a 7000x4561 image within 22 seconds with no manual intervention (compared to few minutes in pixel-by-pixel traversal). [Paper] (Accepted) posting soon....<br>
         <b>Text Detection:</b> Text is detected by finetuning KerasOCR. The text is then linked to a symbol or line using regular expression-based matching.<br>
         <b>Knowledge Graph:</b> The knowledge graph is built using Neo4j. The graph is then queried using Cypher query language. [Paper] (Accepted) posting soon....<br>
