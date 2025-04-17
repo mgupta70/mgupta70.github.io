@@ -7,12 +7,20 @@
       <div class="col-sm-12">
         <h3 class="content_heading">Visual document parsing for engineering blueprints</em></h3>
         <br>
-        <p>Context: Engineering Drawings (EDs) contain a lot of 'visual' information which cannot be indexed by OCR-based methods. Therefore, this work attempts to make the visual information within EDs 'searchable'.<br>
-          Solution: Since EDs are often shared in image-based formats (e.g., PDF, PNG, JPEG), they are first digitized by identifying entities such as symbols, lines, and text. The detected entities are then linked to create a base entity graph (symbols = nodes, lines = edges, texts = property). The base entity graph is then augmented with semantic attributes for nodes and edges forming knowledge graph. The knowledge graph is then used to answer queries such as "find all the valves in the drawing" or perform design checks like "are pumps provided with strainers to prevent dirt getting in?".<br>
+        <p><b>Context:</b> Engineering Drawings (EDs) contain a lot of 'visual' information which cannot be indexed by OCR-based methods. Therefore, this work attempts to make the visual information within EDs 'searchable'.<br>
+        <b>Solution:</b> Since EDs are often shared in image-based formats (e.g., PDF, PNG, JPEG), they are first digitized by identifying entities such as symbols, lines, and text (Step-I). The detected entities are then linked to create a base entity graph (Step-II). Here, symbols = nodes, lines = edges, texts = property. The base entity graph is then augmented with semantic attributes for nodes and edges forming knowledge graph (Step-III). The knowledge graph is then used to answer queries such as "find all the valves in the drawing" or perform design checks like "are pumps provided with strainers to prevent dirt getting in? (Step-IV)".<br>
 		  <br>
         <figure>
-        <img src="static/img/pid_overview.png" width="750px">
+        <img src="static/img/pid_overview.png" width="1250px">
       </figure>
+        </p>
+        <p><b>Symbol Detection:</b> Symbols are detected using Class-Agnostic Detection followed by one-shot classification. This is done because in P&IDs (a type of EDs), there can be more than 400 different types of symbols. Annotating all symbol categories will be time-consuming process. Training in class-agnostic manner will help building a more 'generalizable' symbol detector with capabilites of detecting unseen symbol classes with approx 65% savings in resources to annotate dataset. Refer [Paper] for more details and results<br>
+          <figure>
+            <img src="static/img/workflow.svg">
+          </figure>
+        <b>Line Detection:</b> (Most tricky) Developed a custom method using Probabilistic Hough Transform with line-merging and programmatic hyperparameter selection modules. Our method could find all lines in a 7000x4561 image within 22 seconds with no manual intervention (compared to few minutes in pixel-by-pixel traversal). [Paper] (Accepted) posting soon....<br>
+        <b>Text Detection:</b> Text is detected by finetuning KerasOCR. The text is then linked to a symbol or line using regular expression-based matching.<br>
+        <b>Knowledge Graph:</b> The knowledge graph is built using Neo4j. The graph is then queried using Cypher query language. [Paper] (Accepted) posting soon....<br>
         </p>
       </div>
     </div>
@@ -41,42 +49,12 @@
          <a target="_blank" href="https://predictive-maintenance-time-series.streamlit.app/">[Condition Monitoring App]</a>,
        </p>
        <br>
-       <p> Developed anomaly detection & time-series forecasting models to monitor vibrations in dam turbines for the safe operation. 
-        The project is aimed to shift from costly reactive/preventive maintenance to more efficient predicitive maintenance using the operational history of the asset.
-        However, the biggest challenge was the absence of 'faulty' vibration data as most of the time, turbine was operated in normal (safe) working condition.
-        To solve this, I engaged with field engineers to understand the data and integrate domain knowledge to buid a model for estimating <del> vibration at any time t in future</del> <b>rate of change of vibration</b>. </p>
+       <p><b>Context:</b> The project is part of a larger initiative to develop a digital twin of the dam. The digital twin will be used to monitor the health of the dam and its components, enabling predictive maintenance and reducing downtime.<br> 
+        <b>Challenge:</b> The biggest challenge was the absence of 'faulty' vibration data as most of the time, turbine was operated in normal (safe) working condition.
+        <b>Solution:</b> To solve this, I engaged with field engineers to understand the data and integrate domain knowledge to buid a model for estimating <del> vibration at any time t in future</del> <b>rate of change of vibration</b>. Developed a web application that allows users to visualize the data and perform anomaly detection and time-series forecasting. The app uses a custom ANN-LSTM to predict the future values of the vibration data, and a performance curve model to detect anomalies. The app also includes a dashboard that displays the current status of the dam and its components, as well as alerts for any anomalies detected. </p>
        
      </div>
    </div>
-
-    <hr>
-    <div class="row">
-      <div class="col-sm-12">
-        <h3 class="content_heading">Semi-supervised symbols detection in Piping and Instrumentation Drawings (P&IDs)</h3>
-        <img src="https://img.shields.io/badge/Resnet-grey" alt="Resnet Badge">
-        <img src="https://img.shields.io/badge/Yolov8-orange" alt="Yolov8 Badge">
-        <img src="https://img.shields.io/badge/Siamese%20networks-indigo" alt="SiameseNetwork Badge">
-        <img src="https://img.shields.io/badge/Self%20Supervised%20Learning-green" alt="SelfSupervised Badge">
-        <br>
-        <br>
-
-      <a class="github-button btn" href="https://github.com/mgupta70/PID_Symbol_Detection" data-size="large" data-show-count="false"
-        aria-label="mgupta70/PID_Symbol_Detection on GitHub">Code</a>
-      <a class="github-button" href="https://github.com/mgupta70/PID_Symbol_Detection" data-icon="octicon-star" data-size="large"
-        data-show-count="true" aria-label="Star mgupta70/PID_Symbol_Detection on GitHub">Star</a>
-        <figure>
-          <img src="static/img/workflow.svg">
-        </figure>
-        <br>
-        <p><strong><mark>Published Papers </mark></strong>-
-          <a target="_blank" href="https://www.sciencedirect.com/science/article/abs/pii/S0926580523005204">[Paper-1]</a>,
-          <a target="_blank" href="https://doi.org/10.22260/ISARC2022/0088"> [Paper-2]</a>
-        </p>
-        </p>
-        <br>
-        <p>Typically, P&IDs would have 100's of symbols depicting equipments like valves, compressors, piping components, etc. Manually labelling the dataset is a challenging task due to (i) large number of classes, (ii) many symbols resemble a lot with one another causing confusion while annotating and (iii) non-standardized drawing layouts. Hence, a symbol detection pipleline with class agnostic detection & self-supervised symbol classification is proposed that achieved a Top-5 accuracy of 95.49% over 102 test classes.</p>
-      </div>
-    </div>
 
 
     <hr>
@@ -174,6 +152,9 @@
         </p>
         <br>
         <p>  Aim of this project is to speed up the conversion of a 2D CAD into a 3D BIM model. We found that the semantic segmentation-based approach is more performant than the typical bounding-based methods. In post-processing, we configured the linkage of neural network outputs to a 3D drafting software via Dynamo API.</p>
+        <figure>
+          <img src="static/img/cad_to_3d.png" alt="wall3d" width="800">
+        </figure>
         
       </div>
     </div>
