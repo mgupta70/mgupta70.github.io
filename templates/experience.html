@@ -12,7 +12,7 @@
             <li>(1) They are often shared in image-based formats (e.g., PDF, PNG, JPEG) rendering CAD software tools unable to index the information.</li> 
             <li>(2) A lot of information in Engineering Drawings is 'visual' in nature which requires domain expertise and topological understanding to understand how different objects are functionally connected to one another.</li>
           </ul>
-          <b>Solution:</b> Made the <b>'visual' information within P&IDs searchable</b> using LLMs and computer vision. <br>
+          <b>Solution:</b> Made the <b>'visual' information within P&IDs searchable</b> using LLMs and computer vision. See Figure below. <br>
         <!-- Consequently, P&IDs are first digitized by identifying entities such as symbols, lines, and text (Step-<b>I</b>). The detected entities are then linked to create a base entity graph (Step-<b>II</b>). Here, symbols = nodes, lines = edges, texts = property. The base entity graph is then augmented with semantic attributes for nodes and edges forming knowledge graph (Step-<b>III</b>). The knowledge graph is then used to answer queries such as "find all the valves in the drawing" or perform design checks like "are pumps provided with strainers to prevent dirt getting in? (Step-<b>IV</b>)".<br> -->
         <br>
         <figure>
@@ -22,7 +22,7 @@
         <b>Contributions:</b><br>
         (1) A semi-supervised framework to detect symbols that reduced resource requirements to label dataset by 65%. Used Class-Agnostic Detection followed by one-shot classification. <b>Intuition:</b> No one wants to label more than 400 different types of symbols and symbols look the same across drawings (except orientation & scale) + previous research suggests Class-agnostic training results in a 'generalizable' detector able to localize unseen symbol categories. For more details and results: <strong><mark>Published Papers</mark></strong> -
         <a target="_blank" href="https://www.sciencedirect.com/science/article/abs/pii/S0926580523005204">[Autom. Constr. 2024]</a>,
-        <a target="_blank" href="https://www.iaarc.org/publications/2022_proceedings_of_the_39th_isarc_bogota_colombia/automated_valve_detection_in_piping_and_instrumentation_pid_diagrams.html"> [Paper-2]</a> <br>
+        <a target="_blank" href="https://www.iaarc.org/publications/2022_proceedings_of_the_39th_isarc_bogota_colombia/automated_valve_detection_in_piping_and_instrumentation_pid_diagrams.html"> [ISARC 2022]</a> <br>
         (2) A custom line detection method <em>(Most tricky)</em> using Probabilistic Hough Transform with my own line-merging and programmatic hyperparameter selection modules. It finds all lines in a 7168x4561 image within 22 seconds with no manual intervention (compared to few minutes in common pixel-by-pixel traversal methods). [Paper] (Accepted) posting soon....<br>
         (3) A thorough eveluation of LLMs in answering four types of questions - simple counting, spatial counting, connectivity-related and value-based. Methods to improve Text-to-Cypher accuracy such as graph schema reshaping, contextualization, few-shot prompting are quanitified. [Paper] (Accepted) posting soon....<br>
         </p>
