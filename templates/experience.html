@@ -6,16 +6,20 @@
     <div class="row">
       <div class="col-sm-12">
         <h3 class="content_heading">Visual document parsing for engineering blueprints</em></h3>
+        <img src="https://img.shields.io/badge/Few%20Shot-cyan" alt="FS Badge">
+       <img src="https://img.shields.io/badge/Class%20Agnostic%20Detection-grey" alt="Cagn Badge">
+       <img src="https://img.shields.io/badge/AutoEncoder-green" alt="AE Badge">
+       <img src="https://img.shields.io/badge/OCR-orange" alt="ocr Badge">
+       <img src="https://img.shields.io/badge/gpt-4o%20Curve%20Modeling-blue" alt="gpt Badge">
+       <img src="https://img.shields.io/badge/VQA-yellow" alt="vqa Badge">
+       <img src="https://img.shields.io/badge/RAG-black" alt="rag Badge">
+       <br>
         <br>
        <a class="github-button btn" href="https://github.com/mgupta70/PID_Symbol_Detection" data-size="large" data-show-count="false"
         aria-label="mgupta70/PID_Symbol_Detection on GitHub">Symbol Detection Code</a>
       <a class="github-button" href="https://github.com/mgupta70/PID_Symbol_Detection" data-icon="octicon-star" data-size="large"
         data-show-count="true" aria-label="Star mgupta70/PID_Symbol_Detection on GitHub">Star</a>
-        <br>
-       <a class="github-button btn" href="https://github.com/mgupta70/PIDQA" data-size="large" data-show-count="false"
-        aria-label="mgupta70/PIDQA on GitHub">QA Dataset</a>
-      <a class="github-button btn" href="https://github.com/mgupta70/PID-KnowledgeGraph-demo" data-size="large" data-show-count="false"
-        aria-label="mgupta70/PID-KnowledgeGraph-demo on GitHub">Demo Code</a>
+        
 
         <br>
         <b>Context/Challenge:</b> Information from Engineering Drawings (like P&IDs) is challenging to extract because: <br>
@@ -23,10 +27,10 @@
             <li> They are often shared in image-based formats (e.g., PDF, PNG, JPEG) rendering CAD software tools unable to index the information.</li> 
             <li> A lot of information in Engineering Drawings is 'visual' in nature which requires domain expertise and topological understanding to understand how different objects are functionally connected to one another.</li>
           </ul>
-          <b>Solution:</b> Made the <b>'visual' information within P&IDs searchable</b> using LLMs and computer vision. The proposed workflow is shown below. <br>
+          <b>Solution:</b> Made the <b>'visual' information within P&IDs searchable</b> using LLMs and computer vision. <br>
         <!-- Consequently, P&IDs are first digitized by identifying entities such as symbols, lines, and text (Step-<b>I</b>). The detected entities are then linked to create a base entity graph (Step-<b>II</b>). Here, symbols = nodes, lines = edges, texts = property. The base entity graph is then augmented with semantic attributes for nodes and edges forming knowledge graph (Step-<b>III</b>). The knowledge graph is then used to answer queries such as "find all the valves in the drawing" or perform design checks like "are pumps provided with strainers to prevent dirt getting in? (Step-<b>IV</b>)".<br> -->
         <br>
-        <figure>
+        <!-- <figure>
         <img src="static/img/pid_parsing.png" width="850px">
         <figcaption>Method overview. Step-I: creation of a base entity graph, Step-II: conversion into a labeled property graph, and Step-III: RAG-based information retrieval system.</figcaption>
         </figure>
@@ -40,22 +44,29 @@
         <div style="display: flex; justify-content: center; align-items: flex-start; gap: 30px;">
             <figure style="margin: 0; flex: 2;">
                 <img src="static/img/pid_parsing.png" style="width: 100%; height: auto; max-height: 800px;">
-                <figcaption>Method overview. Step-I: creation of a base entity graph, Step-II: conversion into a labeled property graph, and Step-III: RAG-based information retrieval system.</figcaption>
+                <figcaption>Proposed Workflow </figcaption>
             </figure>
 
             <figure style="margin: 0; flex: 1;">
-                <b>Demo:</b><br>
                 <img src="static/img/pid_demo.gif" style="width: 100%; height: auto; max-height: 400px;">
-                <figcaption>Method overview. Step-I: creation of a base entity graph, Step-II: conversion into a labeled property graph, and Step-III: RAG-based information retrieval system.</figcaption>
+                <figcaption>Demo</figcaption>
             </figure>
         </div>
 
         <br>
-
         <b>Paper-1: Semi-supervised Symbol Detection in P&IDs, Automation in Construction, 2024</b><br>
         <figure>
         <img src="static/img/pap1_11zon.png" width="100%">
-        <figcaption>Method overview. Step-I: creation of a base entity graph, Step-II: conversion into a labeled property graph, and Step-III: RAG-based information retrieval system.</figcaption>
+        </figure>
+
+        <br>
+        <b>Paper-2: PIDQA—Question Answering on Piping and Instrumentation Diagrams, Machine Learning & Knowledge Extraction, 2025</b><br>
+       <a class="github-button btn" href="https://github.com/mgupta70/PIDQA" data-size="large" data-show-count="false"
+        aria-label="mgupta70/PIDQA on GitHub">QA Dataset</a>
+      <a class="github-button btn" href="https://github.com/mgupta70/PID-KnowledgeGraph-demo" data-size="large" data-show-count="false"
+        aria-label="mgupta70/PID-KnowledgeGraph-demo on GitHub">Demo Code</a>
+        <figure>
+        <img src="static/img/pap2_11zon.png" width="100%">
         </figure>
 
         <!-- (1) A semi-supervised framework to detect symbols that reduced resource requirements to label dataset by 65%. Used Class-Agnostic Detection followed by one-shot classification. <b>Intuition:</b> No one wants to label more than 400 different types of symbols and symbols look the same across drawings (except orientation & scale) + previous research suggests Class-agnostic training results in a 'generalizable' detector able to localize unseen symbol categories. For more details and results: <strong><mark>Published Papers</mark></strong> -
