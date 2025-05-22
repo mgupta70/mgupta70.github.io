@@ -15,10 +15,26 @@
           <b>Solution:</b> Made the <b>'visual' information within P&IDs searchable</b> using LLMs and computer vision. See Figure below. <br>
         <!-- Consequently, P&IDs are first digitized by identifying entities such as symbols, lines, and text (Step-<b>I</b>). The detected entities are then linked to create a base entity graph (Step-<b>II</b>). Here, symbols = nodes, lines = edges, texts = property. The base entity graph is then augmented with semantic attributes for nodes and edges forming knowledge graph (Step-<b>III</b>). The knowledge graph is then used to answer queries such as "find all the valves in the drawing" or perform design checks like "are pumps provided with strainers to prevent dirt getting in? (Step-<b>IV</b>)".<br> -->
         <br>
-        <figure>
-        <img src="static/img/pid_overview.png" width="1150px">
+        <!-- <figure>
+        <img src="static/img/pid_parsing.png" width="1150px">
         <figcaption>Method overview. Step-I: creation of a base entity graph, Step-II: conversion into a labeled property graph, and Step-III: RAG-based information retrieval system.</figcaption>
-        </figure>
+        </figure> -->
+
+        <div class="row" align="center">
+          <div class="col-sm-4">
+            <figure>
+              <img src="static/img/pid_parsing.png" width="500px">
+              <figcaption>pid_overview</figcaption>
+            </figure>
+          </div>
+          <div class="col-sm-4">
+            <figure>
+              <img src="static/img/pid_demo.gif" width="500px">
+              <figcaption>pid_demo</figcaption>
+            </figure>
+          </div>
+        </div>
+
         <b>Contributions:</b><br>
         (1) A semi-supervised framework to detect symbols that reduced resource requirements to label dataset by 65%. Used Class-Agnostic Detection followed by one-shot classification. <b>Intuition:</b> No one wants to label more than 400 different types of symbols and symbols look the same across drawings (except orientation & scale) + previous research suggests Class-agnostic training results in a 'generalizable' detector able to localize unseen symbol categories. For more details and results: <strong><mark>Published Papers</mark></strong> -
         <a target="_blank" href="https://www.sciencedirect.com/science/article/abs/pii/S0926580523005204">[Autom. Constr. 2024]</a>,
