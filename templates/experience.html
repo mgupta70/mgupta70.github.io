@@ -13,13 +13,11 @@
        <img src="https://img.shields.io/badge/gpt-4o%20Curve%20Modeling-blue" alt="gpt Badge">
        <img src="https://img.shields.io/badge/VQA-yellow" alt="vqa Badge">
        <img src="https://img.shields.io/badge/RAG-black" alt="rag Badge">
-       <br>
         <br>
        <a class="github-button btn" href="https://github.com/mgupta70/PID_Symbol_Detection" data-size="large" data-show-count="false"
         aria-label="mgupta70/PID_Symbol_Detection on GitHub">Symbol Detection Code</a>
       <a class="github-button" href="https://github.com/mgupta70/PID_Symbol_Detection" data-icon="octicon-star" data-size="large"
         data-show-count="true" aria-label="Star mgupta70/PID_Symbol_Detection on GitHub">Star</a>
-        
 
         <br>
         <b>Context/Challenge:</b> Information from Engineering Drawings (like P&IDs) is challenging to extract because: <br>
@@ -30,16 +28,7 @@
           <b>Solution:</b> Made the <b>'visual' information within P&IDs searchable</b> using LLMs and computer vision. <br>
         <!-- Consequently, P&IDs are first digitized by identifying entities such as symbols, lines, and text (Step-<b>I</b>). The detected entities are then linked to create a base entity graph (Step-<b>II</b>). Here, symbols = nodes, lines = edges, texts = property. The base entity graph is then augmented with semantic attributes for nodes and edges forming knowledge graph (Step-<b>III</b>). The knowledge graph is then used to answer queries such as "find all the valves in the drawing" or perform design checks like "are pumps provided with strainers to prevent dirt getting in? (Step-<b>IV</b>)".<br> -->
         <br>
-        <!-- <figure>
-        <img src="static/img/pid_parsing.png" width="850px">
-        <figcaption>Method overview. Step-I: creation of a base entity graph, Step-II: conversion into a labeled property graph, and Step-III: RAG-based information retrieval system.</figcaption>
-        </figure>
 
-        <b>Demo:</b><br>
-        <figure>
-        <img src="static/img/pid_demo.gif" width="850px">
-        <figcaption>Method overview. Step-I: creation of a base entity graph, Step-II: conversion into a labeled property graph, and Step-III: RAG-based information retrieval system.</figcaption>
-        </figure> -->
 
         <div style="display: flex; justify-content: center; align-items: flex-start; gap: 30px;">
             <figure style="margin: 0; flex: 2;">
@@ -95,7 +84,7 @@
         data-show-count="true" aria-label="Star mgupta70/Predictive-Maintenance-Data-Analytics-App on GitHub">Star</a>
         <br>
         <figure>
-        <img src="static/img/app_overview_svg.svg" width="750px">
+        <img src="static/img/srp_demo.gif" width="100%">
       </figure>
       <br>
        <p><strong><mark>Link to Webapp</mark></strong> -
@@ -149,6 +138,38 @@
   </div>
 </div>
 
+  <hr>
+     <div class="row">
+      <div class="col-sm-12">
+        <h3 class="content_heading">Automated 3D digital models from 2D CAD plans</h3>
+        <img src="https://img.shields.io/badge/Faster%20RCNN-pink" alt="RCNN Badge">
+        <img src="https://img.shields.io/badge/Yolov4-orange" alt="Yolov4 Badge">
+        <img src="https://img.shields.io/badge/Dynamo%20API-green" alt="Dynamo Badge">
+        <img src="https://img.shields.io/badge/Autodesk-blue" alt="Autodesk Badge">
+        <br>
+        <br>
+        <p><strong><mark>Published Papers</mark></strong> -
+          <a target="_blank" href="https://www.mdpi.com/2075-5309/13/9/2336">[Paper-1]</a>,
+          <a target="_blank" href="https://www.iaarc.org/publications/2022_proceedings_of_the_39th_isarc_bogota_colombia/automated_wall_detection_in_2d_cad_drawings_to_create_digital_3d_models.html"> [Paper-2]</a>
+        </p>
+        <br>
+        <p>  Aim of this project is to speed up the conversion of a 2D CAD into a 3D BIM model. We found that the semantic segmentation-based approach is more performant than the typical bounding-based methods. In post-processing, we configured the linkage of neural network outputs to a 3D drafting software via Dynamo API.</p>
+        <!-- <figure>
+          <img src="static/img/cad_to_3d.png" alt="wall3d" width="800">
+        </figure> -->
+        <div style="display: flex; justify-content: center; align-items: center; gap: 70px;">
+          <figure>
+            <img src="static/img/cad_to_3d_1.png" width="500px">
+          </figure>
+          <figure>
+            <img src="static/img/cad_to_3d_2.png" width="500px">
+          </figure>
+        </div>
+        
+      </div>
+    </div>
+
+
 <hr>
     <div class="row">
       <div class="col-sm-12">
@@ -189,36 +210,7 @@
 </div>
 
     
-    <hr>
-     <div class="row">
-      <div class="col-sm-12">
-        <h3 class="content_heading">Automated 3D digital models from 2D CAD plans</h3>
-        <img src="https://img.shields.io/badge/Faster%20RCNN-pink" alt="RCNN Badge">
-        <img src="https://img.shields.io/badge/Yolov4-orange" alt="Yolov4 Badge">
-        <img src="https://img.shields.io/badge/Dynamo%20API-green" alt="Dynamo Badge">
-        <img src="https://img.shields.io/badge/Autodesk-blue" alt="Autodesk Badge">
-        <br>
-        <br>
-        <p><strong><mark>Published Papers</mark></strong> -
-          <a target="_blank" href="https://www.mdpi.com/2075-5309/13/9/2336">[Paper-1]</a>,
-          <a target="_blank" href="https://www.iaarc.org/publications/2022_proceedings_of_the_39th_isarc_bogota_colombia/automated_wall_detection_in_2d_cad_drawings_to_create_digital_3d_models.html"> [Paper-2]</a>
-        </p>
-        <br>
-        <p>  Aim of this project is to speed up the conversion of a 2D CAD into a 3D BIM model. We found that the semantic segmentation-based approach is more performant than the typical bounding-based methods. In post-processing, we configured the linkage of neural network outputs to a 3D drafting software via Dynamo API.</p>
-        <!-- <figure>
-          <img src="static/img/cad_to_3d.png" alt="wall3d" width="800">
-        </figure> -->
-        <div style="display: flex; justify-content: center; align-items: center; gap: 70px;">
-          <figure>
-            <img src="static/img/cad_to_3d_1.png" width="500px">
-          </figure>
-          <figure>
-            <img src="static/img/cad_to_3d_2.png" width="500px">
-          </figure>
-        </div>
-        
-      </div>
-    </div>
+    
 
 
 </div>
